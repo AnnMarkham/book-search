@@ -7,7 +7,6 @@ import {
   Button,
 } from "react-bootstrap";
 
-import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 
@@ -18,7 +17,7 @@ import { useQuery, useMutation } from "@apollo/client";
 const SavedBooks = () => {
   //const [userData, setUserData] = useState({});
   const { loading, data } = useQuery(QUERY_ME);
-  const [deleteBook, { error }] = useMutation(REMOVE_BOOK);
+  const [deleteBook] = useMutation(REMOVE_BOOK);
 
   if (loading) {
     console.log("loading...");
