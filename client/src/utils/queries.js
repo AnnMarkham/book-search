@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const GET_ME = gql`
+export const QUERY_ME = gql`
   {
     me {
       _id
@@ -8,12 +8,11 @@ export const GET_ME = gql`
       email
       bookCount
       savedBooks{
-        bookId 
-        authors
-        description
-        title
-        image
-        link
+          bookId
+          title
+          image
+          link
+          authors
       }
     }
   }
